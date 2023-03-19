@@ -11,6 +11,8 @@
     --brand-main-hue: 340;
     --brand-main: hsla(var(--brand-main-hue), 100%, 50%, 1);
     --brand-dark: #1b2127;
+    --cell-size: 12vmin;
+    --cell-gap: 2vmin;
 }
 
 html,
