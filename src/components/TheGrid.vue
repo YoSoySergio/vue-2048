@@ -1,6 +1,6 @@
 <template>
 	<ul class="grid">
-		<GridCell v-for="(cell, index) in cells" :key="index" :value="cell.value" />
+		<GridCell v-for="cell in cells" :key="`${cell.y}-${cell.x}`" :value="cell.value" />
 	</ul>
 </template>
 

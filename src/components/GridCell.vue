@@ -1,6 +1,10 @@
 <template>
-	<li class="grid__cell" :style="tileBg">
-		{{ value > 0 ? value : '' }}
+	<li class="grid__cell">
+		<Transition name="fade">
+			<span v-if="value > 0" class="grid__tile" :style="tileBg">
+				{{ value }}
+			</span>
+		</Transition>
 	</li>
 </template>
 
@@ -29,13 +33,29 @@
 <style scoped>
 	.grid__cell {
 		display: flex;
+	}
+
+	.grid__tile {
+		display: flex;
 		justify-content: center;
 		align-items: center;
-		border-radius: 100%;
-		width: var(--cell-size);
-		height: var(--cell-size);
 		overflow: hidden;
 		color: var(--brand-dark);
 		font-weight: bold;
+		border-radius: 100%;
+		width: var(--cell-size);
+		height: var(--cell-size);
+	}
+</style>
+
+<style>
+	.fade-enter-active,
+	.fade-leave-active {
+		transition: transform 0.5s ease;
+	}
+
+	.fade-enter-from,
+	.fade-leave-to {
+		transform: scale(0);
 	}
 </style>
